@@ -7,6 +7,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { ThemeColors } from "../theme";
 import CategoriesComponents from "../components/CategoriesComponents";
+import FeaturesComponent from "../components/FeaturesComponent";
+import { featured } from "../assets/data";
 
 export default function HomeScreen() {
   return (
@@ -32,6 +34,23 @@ export default function HomeScreen() {
           <CategoriesComponents/>
         </ScrollView>
         {/* Features */}
+       
+        <View className="mt-5">
+        {
+            [
+              featured, featured, featured
+            ].map((item, index)=>{
+              return (
+                <FeaturesComponent
+                    key={index}
+                    title={item.title}
+                    restaurants = {item.restaurants}
+                    description = {item.description}
+                />
+              )
+            })
+        }
+        </View>
     </SafeAreaView>
   );
 }
