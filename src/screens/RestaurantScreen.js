@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { EvilIcons } from "@expo/vector-icons";
 import { ThemeColors } from "../theme";
 import DishComponent from "../components/DishComponent";
+import CartButton from "../components/CartButton";
 
 export default function RestaurantScreen() {
   const { params } = useRoute();
@@ -12,6 +13,7 @@ export default function RestaurantScreen() {
   let data = params;
   return (
     <View>
+       <CartButton/>
       <ScrollView>
         <View className="relative">
           <Image className="w-full h-72" source={data.image} />
@@ -57,6 +59,8 @@ export default function RestaurantScreen() {
             <Text className="text-grey-700 mt-2">{data.description}</Text>
           </View>
         </View>
+        
+     
         <View className="pb-36 bg-white">
           <Text className="px-4 py-4 text-2xl font-semibold">Menu</Text>
           {/* List of dishes */}
@@ -64,7 +68,9 @@ export default function RestaurantScreen() {
             <DishComponent item={{ ...dish }} key={index} />
           ))}
         </View>
+       
       </ScrollView>
+      
     </View>
   );
 }
