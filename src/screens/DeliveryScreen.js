@@ -73,8 +73,11 @@ export default function DeliveryScreen() {
             <TouchableOpacity className="bg-white p-2 rounded-full">
               <Feather name="phone" size={18} color="orange" />
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Home')} className="bg-white p-2 rounded-full">
-            <MaterialIcons name="cancel" size={18} color="red" />
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Home")}
+              className="bg-white p-2 rounded-full"
+            >
+              <MaterialIcons name="cancel" size={18} color="red" />
             </TouchableOpacity>
           </View>
         </View>
