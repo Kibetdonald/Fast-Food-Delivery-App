@@ -7,6 +7,7 @@ import RestaurantScreen from './src/screens/RestaurantScreen';
 import CartScreen from './src/screens/CartScreen';
 import OrderFinalize from './src/screens/OrderFinalize';
 import DeliveryScreen from './src/screens/DeliveryScreen';
+import SplashScreen from './src/screens/SplashScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ function Navigation() {
             headerShown: false
            }
         }>
+          <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Restaurant" component={RestaurantScreen} />
           <Stack.Screen name="Cart" options={{presentation: 'modal'}} component={CartScreen} />
